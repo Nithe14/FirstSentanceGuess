@@ -1,4 +1,20 @@
 {
-    "Title": "Pierwsza książka",
-    "Title2": "Drugi text"
-}
+    "1": {
+        "Title": "Pierwsza książka",
+        "Sentance1": "...",
+        "Sentance2": "[...]",
+        "Sentance3": "{...}"
+    },
+    "2": {
+    "Title": "Druga książka",
+    "Sentance1": "..",
+    "Sentance2": ",,",
+    "Sentance3": "//"
+  },
+  "3": {
+    "Title": "Trzecia książka",
+    "Sentance1": "...",
+    "Sentance2": ",,,",
+    "Sentance3": "///"
+  }
+    }
