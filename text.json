@@ -1,18 +1,21 @@
 {
     "1": {
         "Title": "Pierwsza książka",
+        "Author": "test-Autor",
         "Sentance1": "...",
         "Sentance2": "[...]",
         "Sentance3": "{...}"
     },
     "2": {
     "Title": "Druga książka",
+    "Author": "test-Author",
     "Sentance1": "..",
     "Sentance2": ",,",
     "Sentance3": "//"
   },
   "3": {
     "Title": "Trzecia książka",
+    "Author": "test-Author",
     "Sentance1": "...",
     "Sentance2": ",,,",
     "Sentance3": "///"
