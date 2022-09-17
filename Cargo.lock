@@ -293,6 +293,7 @@ dependencies = [
  "rocket",
  "rustc-serialize",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
