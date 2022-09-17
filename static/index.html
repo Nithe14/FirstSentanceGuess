@@ -1,11 +1,24 @@
 <html>
     <head>
-        <script type="text/javascript" src="button1.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
     </head>
     <body>
         <h1> Witaj na stronie </h1>
         <div id="content"></div>
-        <input id="button" type="button" onclick="get_sentance()" value="1">
-        <input id="button1" type="button" onclick="get_book()" value="Sprawdź książkę">
+        <input id="button" type="button" onclick="get_sentance()" value="Pokaż pierwsze zdanie">
+        <div id="title"></div> 
+        <form id="frm">
+            Tytuł książki (PL/EN): <input id="field" type="text" name="title"><br>
+            <input id="button1" type="button" onclick="check_book()" value="Sprawdź książkę">
+            </form>
+        <script >
+            var input = document.getElementById("field");
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    document.getElementById("button1").click();
+                }
+            });
+        </script>
     </body>
 </html>
