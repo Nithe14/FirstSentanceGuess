@@ -44,7 +44,7 @@ function check_book(){
     var book = get_book();
     var guess = document.getElementById('frm');
 
-    if ( guess.elements[0].value.toUpperCase() == book.title.replace(/['"]+/g, '').toUpperCase()  || guess.elements[0].value.toUpperCase() == book.titleEN.replace(/['"]+/g, '').toUpperCase()){
+    if ( guess.elements[0].value.toUpperCase() == book.title.replace(/['"]+/g, '').toUpperCase()  || guess.elements[0].value.toUpperCase() == book.title_en.replace(/['"]+/g, '').toUpperCase()){
         document.getElementById("title").innerHTML = "<h3> Dobrze! Książka to: </h3>"  +
             "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
     }
@@ -52,4 +52,10 @@ function check_book(){
     else {
          document.getElementById("title").innerHTML = "<h3>"+guess.elements[0].value + " to błędna odpowiedź. Spróbuj ponownie!</h3> <br>";
     }
+}
+
+function give_up(){
+    var book = get_book();
+
+    document.getElementById("title").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
 }

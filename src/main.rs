@@ -13,7 +13,7 @@ extern crate rocket;
 #[derive(Serialize, Deserialize)]
 struct Book {
     title: String,
-    titleEN: String,
+    title_en: String,
     author: String,
 }
 
@@ -51,7 +51,7 @@ fn get_title(id: String) -> Json<Book> {
 
     Json(Book {
         title: book.find_path(&["Title"]).unwrap().to_string(),
-        titleEN: book.find_path(&["TitleEN"]).unwrap().to_string(),
+        title_en: book.find_path(&["TitleEN"]).unwrap().to_string(),
         author: book.find_path(&["Author"]).unwrap().to_string(),
     })
 }
