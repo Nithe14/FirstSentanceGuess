@@ -57,5 +57,15 @@ function check_book(){
 function give_up(){
     var book = get_book();
 
+    var guess_button = document.getElementById("button1");
+    guess_button.parentNode.removeChild(guess_button);
+
+    var give_up_button = document.getElementById("button2");
+    give_up_button.parentNode.removeChild(give_up_button);
+
+    var field = document.getElementById("frm");
+    field.parentNode.removeChild(field);
+
     document.getElementById("title").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
+
 }
