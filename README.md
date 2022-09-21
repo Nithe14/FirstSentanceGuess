@@ -24,8 +24,8 @@ Update books database by editing `text.json`. For now `id` must be an iterator. 
 
 ```json
 "<id>" {
-    "Title": "<Native-Language-Title",
-    "TitleEN": "<English-Title",
+    "Title": "<Native-Language-Title>",
+    "TitleEN": "<English-Title>",
     "Sentance1": "<First Sentance of the book>",
     "Sentance2": "<Second Sentance of the book>",
     "Sentance3": "<Third Sentance of the book>",
@@ -35,9 +35,7 @@ Update books database by editing `text.json`. For now `id` must be an iterator. 
 } // and so on
 ```
 
- 
-
-Run this commands to run the app:
+Run this commands in your terminal to run the app:
 
 ```bash
 git clone https://github.com/Nithe14/FirstSentanceGuess.git
@@ -46,5 +44,3 @@ cargo run
 ```
 
 Go to your browser at: `127.0.0.1:8000`  and start play the game!
-
-
