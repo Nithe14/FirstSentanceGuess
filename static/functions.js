@@ -1,3 +1,16 @@
+function get_id() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    var id = urlParams.get("id");
+    console.log(id);
+    if (id == null) {
+        return 0;
+    } else {
+        return id;
+    }
+}
+
 function httpGet(url){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
@@ -7,6 +20,7 @@ function httpGet(url){
 
 function get_sentance() {
     var senNumb = document.getElementById('button').value;
+    var id = get_id();
     switch (senNumb) {
         case "Pokaż pierwsze zdanie":
             document.getElementById('button').value = "Pokaż drugie zdanie";
@@ -23,13 +37,14 @@ function get_sentance() {
             //document.getElementById('button').removeChilden = "true";
             break;
     }
-    var url = `http://127.0.0.1:8000/sentance?id=1&s=Sentance${senNumb}`;
+    var url = `http://127.0.0.1:8000/sentance?id=${id}&s=Sentance${senNumb}`;
     var res = httpGet(url)
     document.getElementById("content").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
 }
 
 function get_book() {
-    var url = "http://127.0.0.1:8000/title?id=1";
+    var id = get_id();
+    var url = `http://127.0.0.1:8000/title?id=${id}`;
     var res = httpGet(url);
     //button = document.getElementById("button1");
     //button.parentNode.removeChild(button);
@@ -68,4 +83,20 @@ function give_up(){
 
     document.getElementById("title").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
 
+}
+
+function get_max_id(){
+    var url = "http://127.0.0.1:8000/books-counter";
+    var max_id = parseInt(httpGet(url));
+
+    return max_id;
+}
+
+function next_book(){
+    var id = parseInt(get_id());
+    var max_id = get_max_id();
+    var new_id = id + 1;
+    if (new_id <= max_id ) {
+        location.href = `/?id=${new_id}`
+    }
 }

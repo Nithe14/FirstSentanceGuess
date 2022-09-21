@@ -9,6 +9,7 @@
     },
     "2": {
     "Title": "Druga książka",
+    "TitleEN": "Second book",
     "Author": "test-Author",
     "Sentance1": "..",
     "Sentance2": ",,",
@@ -16,12 +17,18 @@
   },
   "3": {
     "Title": "Trzecia książka",
+    "TitleEN": "Third book",
     "Author": "test-Author",
     "Sentance1": "...",
     "Sentance2": ",,,",
     "Sentance3": "///"
   },
-  "5": {
-      "t":"1"
+  "4": {
+      "Title": "Test4",
+      "TitleEN": "Test4",
+      "Author": "4-author",
+      "Sentance1": "Sentance41",
+      "Sentance2": "Sentance42",
+      "Sentance3": "Sentance43"
   }
     }

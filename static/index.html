@@ -12,6 +12,7 @@
             <input id="button1" type="button" onclick="check_book()" value="Sprawdź książkę">
             </form>
             <input id="button2" type="button" onclick="give_up()" value="Poddaję się">
+            <input id="next" type="button" onclick="next_book()" value="Następna książka">
         <script >
             var input = document.getElementById("field");
             input.addEventListener("keypress", function(event) {
@@ -20,6 +21,18 @@
                     document.getElementById("button1").click();
                 }
             });
+            var id = parseInt(get_id());
+            if (id == 0) {
+                document.getElementById("frm").hidden ="true";
+                document.getElementById("button").hidden ="true";
+                document.getElementById("button1").hidden ="true";
+                document.getElementById("button2").hidden ="true";
+                document.getElementById("next").value ="Przejdź do pierwszej książki";
+            }
+            var max_id = get_max_id();
+            if (id == max_id) {
+                document.getElementById("next").hidden = "true";
+            }
         </script>
     </body>
 </html>
