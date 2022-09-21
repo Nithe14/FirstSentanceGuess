@@ -20,6 +20,13 @@ A super simple web app based on BookTube (Youtube but only books) First Sentance
 
 ## Quick Start
 
+Run this commands in your terminal to clone the app:
+
+```bash
+git clone https://github.com/Nithe14/FirstSentanceGuess.git
+cd FirstSentanceGuess
+```
+
 Update books database by editing `text.json`. For now `id` must be an iterator. DB structure is following:
 
 ```json
@@ -35,11 +42,9 @@ Update books database by editing `text.json`. For now `id` must be an iterator. 
 } // and so on
 ```
 
-Run this commands in your terminal to run the app:
+Run this command to start the app:
 
 ```bash
-git clone https://github.com/Nithe14/FirstSentanceGuess.git
-cd FirstSentanceGuess
 cargo run
 ```
 
