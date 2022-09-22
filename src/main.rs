@@ -16,7 +16,6 @@ struct Book {
     title_en: String,
     author: String,
 }
-
 #[get("/books-counter")]
 fn get_books_count() -> String {
     let mut file = File::open("text.json").unwrap();
@@ -56,15 +55,8 @@ fn get_title(id: String) -> Json<Book> {
     })
 }
 
-#[get("/")]
-fn index() -> String {
-    "Witaj na stronie FirstSentanceGuess".to_string()
-}
-
 #[launch]
 fn rocket() -> _ {
-    let mut file = File::open("text.json").unwrap();
-
     let rocket = rocket::build();
     rocket
         .mount("/", routes![get_sentance, get_title, get_books_count])
