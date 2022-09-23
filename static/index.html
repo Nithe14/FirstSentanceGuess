@@ -25,7 +25,7 @@
                 }
             });
             var id = parseInt(get_id());
-            if (id == 0) {
+            if (id === 0) {
                 document.getElementById("frm").hidden ="true";
                 document.getElementById("button").hidden ="true";
                 document.getElementById("button1").hidden ="true";
@@ -33,7 +33,7 @@
                 document.getElementById("next").value ="Przejdź do pierwszej książki";
             }
             var max_id = get_max_id();
-            if (id == max_id) {
+            if (id === max_id) {
                 document.getElementById("next").hidden = "true";
             }
         </script>

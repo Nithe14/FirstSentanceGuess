@@ -38,7 +38,7 @@ function get_sentance() {
             break;
     }
     var url = `http://127.0.0.1:8000/sentance?id=${id}&s=Sentance${senNumb}`;
-    var res = httpGet(url)
+    var res = httpGet(url);
     document.getElementById("content").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
 }
 
@@ -59,7 +59,8 @@ function check_book(){
     var book = get_book();
     var guess = document.getElementById('frm');
 
-    if ( guess.elements[0].value.toUpperCase() == book.title.replace(/['"]+/g, '').toUpperCase()  || guess.elements[0].value.toUpperCase() == book.title_en.replace(/['"]+/g, '').toUpperCase()){
+    if (guess.elements[0].value.toUpperCase() === book.title.replace(/['"]+/g, '').toUpperCase()
+        || guess.elements[0].value.toUpperCase() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
         document.getElementById("title").innerHTML = "<h3> Dobrze! Książka to: </h3>"  +
             "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
     }
@@ -72,11 +73,11 @@ function check_book(){
 function give_up(){
     var book = get_book();
 
-    var guess_button = document.getElementById("button1");
-    guess_button.parentNode.removeChild(guess_button);
+    var guessButton = document.getElementById("button1");
+    guessButton.parentNode.removeChild(guessButton);
 
-    var give_up_button = document.getElementById("button2");
-    give_up_button.parentNode.removeChild(give_up_button);
+    var giveUpButton = document.getElementById("button2");
+    giveUpButton.parentNode.removeChild(giveUpButton);
 
     var field = document.getElementById("frm");
     field.parentNode.removeChild(field);
@@ -87,16 +88,16 @@ function give_up(){
 
 function get_max_id(){
     var url = "http://127.0.0.1:8000/books-counter";
-    var max_id = parseInt(httpGet(url));
+    var maxId = parseInt(httpGet(url));
 
-    return max_id;
+    return maxId;
 }
 
 function next_book(){
     var id = parseInt(get_id());
-    var max_id = get_max_id();
-    var new_id = id + 1;
-    if (new_id <= max_id ) {
-        location.href = `/?id=${new_id}`
+    var maxId = get_max_id();
+    var newId = id + 1;
+    if (newId <= maxId ) {
+        location.href = `/?id=${newId}`;
     }
 }
