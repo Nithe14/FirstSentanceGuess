@@ -24,12 +24,69 @@ body {
 .sentances {
     background-color: #FFF;
     height: 18em;
-    width: 35em;
+    width: 40%;
     margin-top: auto;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 3em;
-    border-radius: 1em;
+    border-radius: 14px;
     /*filter: drop-shadow(1px 1px 4px black);*/
     box-shadow:1px 1px 4px rgba(0,0,0,0.25);
 }
+
+.user-form {
+    /*margin-right: auto;*/
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    /*grid-column-gap: -20px;*/
+    grid-column-start: 2;
+    justify-content: ;
+    align-items: start;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*margin-left: auto;*/
+    /*width: 100%;*/
+    
+}
+
+.user-input, user-input:focus {
+    /*display: inline;*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    width: 100%;
+    height: 2em;
+    border-radius: 14px;
+    border: 0px;
+    outline: none;
+    align-self: start;
+    box-shadow:1px 1px 4px rgba(0,0,0,0.25);
+    z-index: 2;
+    align-self: center;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.user-input:focus::placeholder, .user-input::placeholder {
+    padding-left: 10px;
+    opacity: .3;
+}
+
+.check_book {
+    border: 0px;
+    background: transparent;
+    justify-self: start;
+    align-self: start;
+    margin-top: 3px;
+    margin-left: -90px;
+    transition: margin-left 700ms;
+    /*margin-bottom: auto;*/
+}
+
+.check_book:hover{
+    margin-left: -20px;
+    transition: margin-left 700ms;
+    cursor: pointer;
+}
+
