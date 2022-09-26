@@ -3,7 +3,7 @@ function get_id() {
     const urlParams = new URLSearchParams(queryString);
 
     var id = urlParams.get("id");
-    console.log(id);
+    //console.log(id);
     if (id == null) {
         return 0;
     } else {
@@ -66,7 +66,11 @@ function check_book(){
     }
 
     else {
-         document.getElementById("title").innerHTML = "<h3>"+guess.elements[0].value + " to błędna odpowiedź. Spróbuj ponownie!</h3> <br>";
+         guess.classList.add("apply-shake");
+         //document.getElementById("title").innerHTML = "<h3>"+guess.elements[0].value + " to błędna odpowiedź. Spróbuj ponownie!</h3> <br>";
+        guess.addEventListener("animationend", (e) => {
+            guess.classList.remove("apply-shake");
+        });
     }
 }
 
