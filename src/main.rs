@@ -35,6 +35,7 @@ fn get_sentance(id: String, s: String) -> std::string::String {
     file.read_to_string(&mut data).unwrap();
 
     let json = rustcJson::from_str(&data).unwrap();
+
     let book = json.find_path(&[id.as_str()]).unwrap();
     book.find_path(&[s.as_str()]).unwrap().to_string()
 }

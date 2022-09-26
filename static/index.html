@@ -5,7 +5,7 @@
 	<script type="text/javascript" src="functions.js"></script>
 </head>
     <body>
-
+        
         <!--book image-->
         <img class="book2" src="svg/book2.svg" alt="Book2">
         
@@ -13,10 +13,13 @@
         <hr class="shelf"/>
        
         <!--sentances box-->
-        <div class="sentances" id="content"></div>
+        <div class="sentances-box" id="content">
+            <img class="quote1" src="svg/quote-1.svg" alt="quote1">
+            <p class="sentances" id="sen"></p>
+            <img class="quote2" src="svg/quote-2.svg" alt="quote2">
+        </div>
        
         <input id="button" type="button" onclick="get_sentance()" value="Pokaż pierwsze zdanie">
-        <div id="title"></div>
         <form class="user-form" id="frm">
             <div>&nbsp;</div>
             <input class="user-input" id="field" type="text" name="title" placeholder="Wpisz tytuł">

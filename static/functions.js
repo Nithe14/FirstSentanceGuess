@@ -39,7 +39,7 @@ function get_sentance() {
     }
     var url = `http://127.0.0.1:8000/sentance?id=${id}&s=Sentance${senNumb}`;
     var res = httpGet(url);
-    document.getElementById("content").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
+    document.getElementById("sen").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
 }
 
 function get_book() {
@@ -61,8 +61,8 @@ function check_book(){
 
     if (guess.elements[0].value.toUpperCase() === book.title.replace(/['"]+/g, '').toUpperCase()
         || guess.elements[0].value.toUpperCase() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
-        document.getElementById("title").innerHTML = "<h3> Dobrze! Książka to: </h3>"  +
-            "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
+        document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
+            "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
     }
 
     else {
@@ -86,7 +86,7 @@ function give_up(){
     var field = document.getElementById("frm");
     field.parentNode.removeChild(field);
 
-    document.getElementById("title").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
+    document.getElementById("sen").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
 
 }
 
