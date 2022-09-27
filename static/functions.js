@@ -1,5 +1,15 @@
 let questionId = 1;
 
+function save_cache(){
+    sessionStorage.setItem("questionId", questionId);
+    sessionStorage.setItem("saved", true);
+}
+
+function load_cache(){
+    if (!sessionStorage.saved) return;
+    questionId = Number(sessionStorage.getItem("questionId"));
+}
+
 function get_id() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -132,6 +142,7 @@ function get_max_id(){
 function next_book_test(){
     questionId++;
     set_sentances();
+    save_cache();
 }
 
 function next_book(){

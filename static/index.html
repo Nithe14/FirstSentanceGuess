@@ -19,7 +19,6 @@
             <img class="quote2" src="svg/quote-2.svg" alt="quote2">
         </div>
        
-        <input id="button" type="button" onclick="get_sentance()" value="Pokaż pierwsze zdanie">
         <form class="user-form" id="frm">
             <div>&nbsp;</div>
             <input class="user-input" id="field" type="text" name="title" placeholder="Wpisz tytuł">
@@ -30,8 +29,8 @@
             </form>
             <input id="button2" type="button" onclick="give_up()" value="Poddaję się">
             <input id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
-            <input id="next" type="button" onclick="next_book()" value="Następna książka">
         <script >
+            load_cache();
             set_sentances();
             var input = document.getElementById("field");
             input.addEventListener("keypress", function(event) {
@@ -41,13 +40,6 @@
                 }
             });
             var id = parseInt(get_id());
-            if (id === 0) {
-                document.getElementById("frm").hidden ="true";
-                document.getElementById("button").hidden ="true";
-                document.getElementById("button1").hidden ="true";
-                document.getElementById("button2").hidden ="true";
-                document.getElementById("next").value ="Przejdź do pierwszej książki";
-            }
             var max_id = get_max_id();
             if (id === max_id) {
                 document.getElementById("next").hidden = "true";
