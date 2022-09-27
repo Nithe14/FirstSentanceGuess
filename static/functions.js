@@ -1,3 +1,5 @@
+let questionId = 1;
+
 function get_id() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -50,9 +52,9 @@ function httpGet(url){
 
 function set_sentances() {
     let sentences = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
-        "Cras volutpat ipsum risus, ut semper dolor rutrum et.", 
-        "Morbi scelerisque, nisl ac dictum porttitor, ex ipsum tempus neque, sit amet egestas mauris ante sed turpis."
+        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${1}`).replace(/['"]+/g, ''), 
+        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${2}`).replace(/['"]+/g, ''), 
+        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${3}`).replace(/['"]+/g, '')
     ];
     document.getElementById("sen").innerHTML = `
             ${sentences[0]}
@@ -139,6 +141,11 @@ function get_max_id(){
     return maxId;
 }
 
+function next_book_test(){
+    questionId++;
+    set_sentances();
+}
+
 function next_book(){
     var id = parseInt(get_id());
     var maxId = get_max_id();
@@ -146,4 +153,5 @@ function next_book(){
     if (newId <= maxId ) {
         location.href = `/?id=${newId}`;
     }
+    
 }
