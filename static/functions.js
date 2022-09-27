@@ -17,8 +17,6 @@ function blurTemplate(sentence){
     const template = 
     `<blur
         onclick="blurOnClick(this)"
-        onmouseover="blurOnMouseOver(this)"
-        onmouseout="blurOnMouseOut(this)"
     >`
     return `${template} ${sentence}</blur>`;
 }
@@ -30,17 +28,7 @@ function unblur(element){
 function blurOnClick(element){
     element.style.color = "black";
     unblur(element);
-    element.class = "blur_disabled"
-}
-
-function blurOnMouseOver(element){
-    if (element.class === "blur_disabled")  return;
-    element.style.color = "#D3A0A7";
-}
-
-function blurOnMouseOut(element){
-    if (element.class === "blur_disabled")  return;
-    element.style.color = "black";
+    element.class = "blur_disabled";
 }
 
 function httpGet(url){

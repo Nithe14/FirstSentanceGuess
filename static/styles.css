@@ -44,7 +44,13 @@ body {
 }
 
 blur {
-    filter: blur(10px);
+    filter: blur(9px);
+    -webkit-filter: blur(9px);
+}
+
+blur:hover {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
 }
 
 .quote1 {
