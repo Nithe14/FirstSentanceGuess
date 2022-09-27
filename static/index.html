@@ -31,6 +31,7 @@
             <input id="button2" type="button" onclick="give_up()" value="Poddaję się">
             <input id="next" type="button" onclick="next_book()" value="Następna książka">
         <script >
+            set_sentances();
             var input = document.getElementById("field");
             input.addEventListener("keypress", function(event) {
                 if (event.key === "Enter") {

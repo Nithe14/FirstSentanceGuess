@@ -43,6 +43,10 @@ body {
     margin-top: 50px;
 }
 
+blur {
+    filter: blur(10px);
+}
+
 .quote1 {
     margin-top: 10px;
     margin-left: 10px;

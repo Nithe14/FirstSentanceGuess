@@ -11,11 +11,53 @@ function get_id() {
     }
 }
 
+function blurTemplate(sentence){
+    const template = 
+    `<blur
+        onclick="blurOnClick(this)"
+        onmouseover="blurOnMouseOver(this)"
+        onmouseout="blurOnMouseOut(this)"
+    >`
+    return `${template} ${sentence}</blur>`;
+}
+
+function unblur(element){
+    element.style.filter = "blur(0px)";
+}
+
+function blurOnClick(element){
+    element.style.color = "black";
+    unblur(element);
+    element.class = "blur_disabled"
+}
+
+function blurOnMouseOver(element){
+    if (element.class === "blur_disabled")  return;
+    element.style.color = "#D3A0A7";
+}
+
+function blurOnMouseOut(element){
+    if (element.class === "blur_disabled")  return;
+    element.style.color = "black";
+}
+
 function httpGet(url){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false ); // false for synchronous request
     xmlHttp.send( null );
     return xmlHttp.responseText;
+}
+
+function set_sentances() {
+    let sentences = [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
+        "Cras volutpat ipsum risus, ut semper dolor rutrum et.", 
+        "Morbi scelerisque, nisl ac dictum porttitor, ex ipsum tempus neque, sit amet egestas mauris ante sed turpis."
+    ];
+    document.getElementById("sen").innerHTML = `
+            ${sentences[0]}
+            ${blurTemplate(sentences[1])}
+            ${blurTemplate(sentences[2])}`;
 }
 
 function get_sentance() {
