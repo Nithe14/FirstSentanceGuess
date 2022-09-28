@@ -1,5 +1,5 @@
 body {
-    background-color: #EDDAD4;
+    background-color: #EDDAD1;
 }
 
 .book2 {
@@ -130,4 +130,81 @@ blur:hover {
 
 .apply-shake {
     animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.cover {
+    display: block;
+    margin: auto;
+}
+
+/* From uiverse.io */
+.c-button {
+ background-color:#857070;
+ color: #fff;
+ font-weight: 700;
+ font-size: 16px;
+ text-decoration: none;
+ padding: 0.9em 1.6em;
+ cursor: pointer;
+ /*display: inline-block;*/
+ /*vertical-align: middle;*/
+ /*position: relative;*/
+ z-index: 2;
+ position: absolute;
+ left: 850px;
+ bottom: 200px;
+}
+
+.c-button--gooey {
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ border: 4px solid #857070;
+ border-radius: 0;
+ /*position: relative;*/
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+ height: 100%;
+ filter: url(#goo);
+ overflow: hidden;
+ position: absolute;
+ top: 0;
+ left: 0;
+ bottom: -3px;
+ right: -1px;
+ z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+ background-color: #4A464E;
+ width: 34%;
+ height: 100%;
+ border-radius: 100%;
+ position: absolute;
+ transform: scale(1.4) translateY(125%) translateZ(0);
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+ left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+ left: 30%;
+ transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+ left: 66%;
+ transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+ color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+ transform: scale(1.4) translateY(0) translateZ(0);
 }
