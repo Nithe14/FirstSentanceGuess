@@ -12,10 +12,10 @@
         <!--shelf bar-->
         <hr class="shelf"/>
        
-        <!--sentances box-->
+        <!--sentences box-->
         <div class="sentences-box" id="content">
             <img class="quote1" src="svg/quote-1.svg" alt="quote1">
-            <p class="sentances" id="sen"></p>
+            <p class="sentences" id="sen"></p>
             <img class="quote2" src="svg/quote-2.svg" alt="quote2">
         </div>
        
@@ -31,7 +31,7 @@
             <input id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
         <script >
             load_cache();
-            set_sentances();
+            set_sentences();
             var input = document.getElementById("field");
             input.addEventListener("keypress", function(event) {
                 if (event.key === "Enter") {

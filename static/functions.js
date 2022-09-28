@@ -48,11 +48,11 @@ function httpGet(url){
     return xmlHttp.responseText;
 }
 
-function set_sentances() {
+function set_sentences() {
     let sentences = [
-        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${1}`).replace(/['"]+/g, ''), 
-        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${2}`).replace(/['"]+/g, ''), 
-        httpGet(`http://127.0.0.1:8000/sentance?id=${questionId}&s=Sentance${3}`).replace(/['"]+/g, '')
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${1}`).replace(/['"]+/g, ''), 
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${2}`).replace(/['"]+/g, ''), 
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${3}`).replace(/['"]+/g, '')
     ];
     document.getElementById("sen").innerHTML = `
             ${sentences[0]}
@@ -60,7 +60,7 @@ function set_sentances() {
             ${blurTemplate(sentences[2])}`;
 }
 
-function get_sentance() {
+function get_sentence() {
     var senNumb = document.getElementById('button').value;
     var id = get_id();
     switch (senNumb) {
@@ -79,7 +79,7 @@ function get_sentance() {
             //document.getElementById('button').removeChilden = "true";
             break;
     }
-    var url = `http://127.0.0.1:8000/sentance?id=${id}&s=Sentance${senNumb}`;
+    var url = `http://127.0.0.1:8000/sentence?id=${id}&s=sentence${senNumb}`;
     var res = httpGet(url);
     document.getElementById("sen").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
 }
@@ -141,7 +141,7 @@ function get_max_id(){
 
 function next_book_test(){
     questionId++;
-    set_sentances();
+    set_sentences();
     save_cache();
 }
 
