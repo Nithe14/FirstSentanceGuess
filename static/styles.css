@@ -129,5 +129,5 @@ blur:hover {
 }
 
 .apply-shake {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
 }
