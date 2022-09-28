@@ -15,7 +15,6 @@ function get_id() {
     const urlParams = new URLSearchParams(queryString);
 
     var id = urlParams.get("id");
-    //console.log(id);
     if (id == null) {
         return 0;
     } else {
@@ -50,51 +49,21 @@ function httpGet(url){
 
 function set_sentences() {
     let sentences = [
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${1}`).replace(/['"]+/g, ''), 
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${2}`).replace(/['"]+/g, ''), 
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=sentence${3}`).replace(/['"]+/g, '')
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${1}`).replace(/['"]+/g, ''),
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${2}`).replace(/['"]+/g, ''),
+        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${3}`).replace(/['"]+/g, '')
     ];
     document.getElementById("sen").innerHTML = `
             ${sentences[0]}
             ${blurTemplate(sentences[1])}
             ${blurTemplate(sentences[2])}`;
 }
-
-function get_sentence() {
-    var senNumb = document.getElementById('button').value;
-    var id = get_id();
-    switch (senNumb) {
-        case "Pokaż pierwsze zdanie":
-            document.getElementById('button').value = "Pokaż drugie zdanie";
-            senNumb = "1";
-            break;
-        case "Pokaż drugie zdanie":
-            document.getElementById('button').value = "Pokaż trzecie zdanie";
-            senNumb = "2";
-            break;
-        case "Pokaż trzecie zdanie":
-            senNumb = "3";
-            var button = document.getElementById("button");
-            button.parentNode.removeChild(button);
-            //document.getElementById('button').removeChilden = "true";
-            break;
-    }
-    var url = `http://127.0.0.1:8000/sentence?id=${id}&s=sentence${senNumb}`;
-    var res = httpGet(url);
-    document.getElementById("sen").innerHTML+= res.replace(/['"]+/g, '') + "<br>";
-}
-
 function get_book() {
-    var id = get_id();
-    var url = `http://127.0.0.1:8000/title?id=${id}`;
+    var url = `http://127.0.0.1:8000/title?id=${questionId}`;
     var res = httpGet(url);
-    //button = document.getElementById("button1");
-    //button.parentNode.removeChild(button);
     var json = JSON.parse(res);
 
     return json;
-
-    //document.getElementById("content").innerHTML += "<h3>" + json.title.replace(/['"]+/g, '') +"<br>"+ json.author.replace(/['"]+/g, '') +  "</h3>"
 }
 
 function check_book(){

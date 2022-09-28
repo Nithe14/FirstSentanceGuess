@@ -3,40 +3,40 @@
         "Title": "Pierwsza książka",
         "TitleEN": "First book",
         "Author": "test-Autor",
-        "sentence1": "Jebać disa.",
-        "sentence2": "Cisa tetrisa, anubisa, długopisa.",
-        "sentence3": "JD :)"
+        "Sentence1": "Jebać disa.",
+        "Sentence2": "Cisa tetrisa, anubisa, długopisa.",
+        "Sentence3": "JD :)"
     },
     "2": {
     "Title": "Druga książka",
     "TitleEN": "Second book",
     "Author": "test-Author",
-    "sentence1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "sentence2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "sentence3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Sentence1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Sentence2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "Sentence3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   "3": {
     "Title": "Trzecia książka",
     "TitleEN": "Third book",
     "Author": "test-Author",
-    "sentence1": "...",
-    "sentence2": ",,,",
-    "sentence3": "///"
+    "Sentence1": "...",
+    "Sentence2": ",,,",
+    "Sentence3": "///"
   },
   "4": {
       "Title": "Test4",
       "TitleEN": "Test4",
       "Author": "4-author",
-      "sentence1": "sentence41",
-      "sentence2": "sentence42",
-      "sentence3": "sentence43"
+      "Sentence1": "Sentence41",
+      "Sentence2": "Sentence42",
+      "Sentence3": "Sentence43"
   },
   "5": {
       "Title": "Cień Wiatru",
       "TitleEN": "The Shadow of the Wind",
       "Author": "Carlos Ruiz Zafón",
-      "sentence1": "Wciąż pamiętam ów świat, gdy ojciec po raz pierwszy wziął mnie ze sobą w miejsce zwane X X X. ",
-      "sentence2": "Szliśmy ulicami Barcelony. ",
-      "sentence3": "Były pierwsze dni lata 1945 roku. "
+      "Sentence1": "Wciąż pamiętam ów świat, gdy ojciec po raz pierwszy wziął mnie ze sobą w miejsce zwane X X X. ",
+      "Sentence2": "Szliśmy ulicami Barcelony. ",
+      "Sentence3": "Były pierwsze dni lata 1945 roku. "
   }
     }
