@@ -15,6 +15,7 @@ struct Book {
     title: String,
     title_en: String,
     author: String,
+    sentences: [String; 3]
 }
 #[get("/books-counter")]
 fn get_books_count() -> String {
@@ -28,8 +29,8 @@ fn get_books_count() -> String {
     json.as_object().unwrap().len().to_string()
 }
 
-#[get("/sentance?<id>&<s>")]
-fn get_sentance(id: String, s: String) -> std::string::String {
+#[get("/sentence?<id>&<s>")]
+fn get_sentence(id: String, s: String) -> std::string::String {
     let mut file = File::open("text.json").unwrap();
     let mut data = String::new();
     file.read_to_string(&mut data).unwrap();
@@ -53,6 +54,7 @@ fn get_title(id: String) -> Json<Book> {
         title: book.find_path(&["Title"]).unwrap().to_string(),
         title_en: book.find_path(&["TitleEN"]).unwrap().to_string(),
         author: book.find_path(&["Author"]).unwrap().to_string(),
+        sentences :
     })
 }
 
@@ -60,6 +62,6 @@ fn get_title(id: String) -> Json<Book> {
 fn rocket() -> _ {
     let rocket = rocket::build();
     rocket
-        .mount("/", routes![get_sentance, get_title, get_books_count])
+        .mount("/", routes![get_sentence, get_title, get_books_count])
         .mount("/", FileServer::from(relative!("static")))
 }
