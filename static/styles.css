@@ -51,6 +51,7 @@ blur {
 blur:hover {
     filter: blur(6px);
     -webkit-filter: blur(6px);
+    cursor: pointer;
 }
 
 .quote1 {
