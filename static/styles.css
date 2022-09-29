@@ -132,9 +132,17 @@ blur:hover {
     animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
 .cover {
     display: block;
     margin: auto;
+    width: 33%;
+    /*height: auto;*/
 }
 
 /* From uiverse.io */
@@ -151,8 +159,8 @@ blur:hover {
  /*position: relative;*/
  z-index: 2;
  position: absolute;
- left: 850px;
- bottom: 200px;
+ left: 43.8%;
+ bottom: 10%;
 }
 
 .c-button--gooey {
