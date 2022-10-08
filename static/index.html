@@ -39,11 +39,13 @@
                     document.getElementById("button1").click();
                 }
             });
-            var id = parseInt(get_id());
-            var max_id = get_max_id();
+            var id = questionId ;
+            var max_id = get_max_id(); 
             if (id === max_id) {
                 document.getElementById("next").hidden = "true";
+                document.getElementById("nextBookButton").hidden = "true";
             }
+            save_cache();
         </script>
     </body>
 </html>

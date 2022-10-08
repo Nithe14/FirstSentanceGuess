@@ -3,11 +3,13 @@ let questionId = 1;
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
     sessionStorage.setItem("saved", true);
+    sessionStorage.setItem("nextBookButtonState", document.getElementById("nextBookButton").hidden)
 }
 
 function load_cache(){
     if (!sessionStorage.saved) return;
     questionId = Number(sessionStorage.getItem("questionId"));
+    document.getElementById("nextBookButton").hidden = Boolean(sessionStorage.getItem("nextBookButtonState"))
 }
 
 function get_id() {
@@ -23,7 +25,7 @@ function get_id() {
 }
 
 function blurTemplate(sentence){
-    const template = 
+    const template =
     `<blur
         onclick="blurOnClick(this)"
     >`
@@ -69,9 +71,15 @@ function get_book() {
 function check_book(){
     var book = get_book();
     var guess = document.getElementById('frm');
+    var guessButton = document.getElementById("button1");
+    var giveUpButton = document.getElementById("button2");
+    var input = document.getElementById("field");
 
     if (guess.elements[0].value.toUpperCase() === book.title.replace(/['"]+/g, '').toUpperCase()
         || guess.elements[0].value.toUpperCase() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
+        giveUpButton.hidden = true;
+        guessButton.disabled = true;
+        input.readOnly = true;
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
     }
@@ -89,15 +97,17 @@ function give_up(){
     var book = get_book();
 
     var guessButton = document.getElementById("button1");
-    guessButton.parentNode.removeChild(guessButton);
+    guessButton.disabled = true;
 
     var giveUpButton = document.getElementById("button2");
-    giveUpButton.parentNode.removeChild(giveUpButton);
+    giveUpButton.hidden = true;
+    //giveUpButton.parentNode.removeChild(giveUpButton);
 
-    var field = document.getElementById("frm");
-    field.parentNode.removeChild(field);
 
-    document.getElementById("sen").innerHTML = "<h3> Twoja książka to: </h3>" + "<h4>" + book.title.replace(/['"]+/g, '') + "<br>" + book.author.replace(/['"]+/g, '') + "</h4>";
+    var input = document.getElementById("field");
+    input.readOnly = true;
+
+    document.getElementById("sen").innerHTML = "<p style='text-align: center'> Twoja książka to: </p>" + "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
 
 }
 
@@ -108,7 +118,20 @@ function get_max_id(){
     return maxId;
 }
 
+function reset_form() {
+    document.getElementById("frm").reset();
+    document.getElementById("button2").hidden = false;
+    document.getElementById("button1").disabled = false;
+    document.getElementById("field").readOnly = false;
+}
+
 function next_book_test(){
+    let maxId = get_max_id();
+    let nextId = questionId+1;
+    if (nextId >= maxId){
+        document.getElementById("nextBookButton").hidden = true;
+    }
+    reset_form();
     questionId++;
     set_sentences();
     save_cache();
@@ -121,5 +144,5 @@ function next_book(){
     if (newId <= maxId ) {
         location.href = `/?id=${newId}`;
     }
-    
+
 }
