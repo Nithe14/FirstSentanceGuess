@@ -21,24 +21,38 @@ body {
     margin-bottom: 3em;
 }
 
-.sentences-box {
+.grid {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.2fr;
+    grid-template-areas: 
+    ". sen sen ."
+    "form form form form";
+}
+
+.sentences-box {
+    grid-area: sen;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-areas: "quote_a st st quote_b";
     overflow: hidden;
-    grid-template-columns: 10% 80% 10%;
     background-color: #FFF;
     min-height: 18em;
-    width: 40%;
+    /*width: 40%;*/
     margin-top: auto;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 3em;
     border-radius: 14px;
-    /*filter: drop-shadow(1px 1px 4px black);*/
+    /*[>filter: drop-shadow(1px 1px 4px black);<]*/
     box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
     user-select: none;
+
 }
 
 .sentences {
+    grid-area: st;
     font-size: 32px;
     margin-top: 50px;
 }
@@ -55,28 +69,37 @@ blur:hover {
 }
 
 .quote1 {
+    grid-area: quote_a;
     margin-top: 10px;
     margin-left: 10px;
 }
 
 .quote2 {
+    grid-area: quote_b;
     margin-bottom: 10px;
     margin-right: 10px;
     justify-self: end;
     align-self: end;
 }
 
+/*.user-form {*/
+    /*display: grid;*/
+    /*grid-template-columns: 30% 40% 30%;*/
+    /*grid-column-start: 2;*/
+    /*justify-content: ;*/
+    /*align-items: start;    */
+/*}*/
 .user-form {
+    grid-area: form;
     display: grid;
-    grid-template-columns: 30% 40% 30%;
-    grid-column-start: 2;
-    justify-content: ;
-    align-items: start;    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". input input butt"
 }
 
 .user-input, user-input:focus { 
     width: 100%;
     height: 2em;
+    grid-area: input;
     border-radius: 14px;
     border: 0px;
     outline: none;
@@ -96,8 +119,9 @@ blur:hover {
 .check_book {
     border: 0px;
     background: transparent;
+    grid-area: butt;
     justify-self: start;
-    align-self: start;
+    align-self: center;
     margin-top: 3px;
     margin-left: -90px;
     transition: margin-left 700ms;

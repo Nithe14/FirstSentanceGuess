@@ -12,6 +12,7 @@
         <!--shelf bar-->
         <hr class="shelf"/>
        
+        <div class="grid">
         <!--sentences box-->
         <div class="sentences-box" id="content">
             <img class="quote1" src="svg/quote-1.svg" alt="quote1">
@@ -20,13 +21,14 @@
         </div>
        
         <form class="user-form" id="frm">
-            <div>&nbsp;</div>
+            <!--<div>&nbsp;</div>-->
             <input class="user-input" id="field" type="text" name="title" placeholder="Wpisz tytuł">
             
             <!--check_book button-->
             <button class="check_book" id="button1" type="button" onclick="check_book()"> 
             <img src="svg/check_button.svg" height="50" alt="submit"> </button>
             </form>
+        </div>
             <input id="button2" type="button" onclick="give_up()" value="Poddaję się">
             <input id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
         <script >
