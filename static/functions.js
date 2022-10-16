@@ -3,13 +3,15 @@ let questionId = 1;
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
     sessionStorage.setItem("saved", true);
-    sessionStorage.setItem("nextBookButtonState", document.getElementById("nextBookButton").hidden)
+    sessionStorage.setItem("nextBookButtonState", document.getElementById("nextBookButton").style.visibility);
+    //sessionStorage.setItem("nextBookButtonState", document.getElementById("nextBookButton").hidden)
 }
 
 function load_cache(){
     if (!sessionStorage.saved) return;
     questionId = Number(sessionStorage.getItem("questionId"));
-    document.getElementById("nextBookButton").hidden = Boolean(sessionStorage.getItem("nextBookButtonState"))
+    document.getElementById("nextBookButton").style.visibility = String(sessionStorage.getItem("nextBookButtonState"));
+    //document.getElementById("nextBookButton").hidden = Boolean(sessionStorage.getItem("nextBookButtonState"))
 }
 
 function get_id() {
@@ -82,6 +84,8 @@ function check_book(){
         input.readOnly = true;
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
+
+        document.getElementById("nextBookButton").style.visibility = 'visible';
     }
 
     else {
@@ -98,7 +102,7 @@ function give_up(){
 
     var guessButton = document.getElementById("button1");
     guessButton.disabled = true;
-
+    document.getElementById("nextBookButton").style.visibility = 'visible';
     var giveUpButton = document.getElementById("button2");
     giveUpButton.hidden = true;
     //giveUpButton.parentNode.removeChild(giveUpButton);
@@ -123,6 +127,14 @@ function reset_form() {
     document.getElementById("button2").hidden = false;
     document.getElementById("button1").disabled = false;
     document.getElementById("field").readOnly = false;
+    document.getElementById("nextBookButton").style.visibility = 'hidden';
+
+    var id = questionId ;
+            var max_id = get_max_id();
+            if (id === max_id) {
+                document.getElementById("next").hidden = "true";
+                document.getElementById('nextBookButton').style.visibility = 'hidden';
+            }
 }
 
 function next_book_test(){

@@ -216,6 +216,10 @@ blur:hover {
     /*height: auto;*/
 }
 
+.next {
+    visibility: hidden;
+}
+
 /* From uiverse.io */
 .c-button {
  background-color:#857070;

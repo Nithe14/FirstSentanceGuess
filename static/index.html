@@ -54,7 +54,7 @@
             var max_id = get_max_id(); 
             if (id === max_id) {
                 document.getElementById("next").hidden = "true";
-                document.getElementById("nextBookButton").hidden = "true";
+                document.getElementById('nextBookButton').style.visibility = 'hidden';
             }
             save_cache();
         </script>
