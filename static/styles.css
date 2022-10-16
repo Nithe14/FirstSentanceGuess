@@ -26,12 +26,57 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 0.2fr;
     grid-template-areas: 
-    ". sen sen ."
+    "sen sen sen sen"
     "form form form form";
 }
 
-.sentences-box {
+.sentences-grid {
     grid-area: sen;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-areas:
+    ". box box giveup"
+    ". box box ."
+    ". box box nextb"
+    ". box box ."
+}
+
+.give_up {
+    border: 0px;
+    background: transparent;
+    grid-area: giveup;
+    justify-self: start;
+    align-self: center;
+    margin-top: 3px;
+    margin-left: -90px;
+    transition: margin-left 700ms;
+    z-index: 0;
+    /*margin-bottom: auto;*/
+}
+
+
+.give_up_img {
+    vertical-align: middle;
+}
+.give_up_text{
+    line-height: 24px;
+    margin-left: -155.6px;
+    /*right: 65%;*/
+    /*transform: translateX(-50%);*/
+    font-size: 15px;
+    color: white;
+
+}
+
+.give_up:hover{
+    margin-left: -20px;
+    transition: margin-left 700ms;
+    cursor: pointer;
+}
+
+.sentences-box {
+    grid-area: box;
     width: 100%;
     display: grid;
     grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
@@ -48,6 +93,7 @@ body {
     /*[>filter: drop-shadow(1px 1px 4px black);<]*/
     box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
     user-select: none;
+    z-index: 1;
 
 }
 
@@ -93,7 +139,7 @@ blur:hover {
     grid-area: form;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". input input butt"
+    grid-template-areas: ". input input check"
 }
 
 .user-input, user-input:focus { 
@@ -119,7 +165,7 @@ blur:hover {
 .check_book {
     border: 0px;
     background: transparent;
-    grid-area: butt;
+    grid-area: check;
     justify-self: start;
     align-self: center;
     margin-top: 3px;

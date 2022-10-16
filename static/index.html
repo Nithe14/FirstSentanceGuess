@@ -14,10 +14,18 @@
        
         <div class="grid">
         <!--sentences box-->
+        <div class="sentences-grid">
         <div class="sentences-box" id="content">
             <img class="quote1" src="svg/quote-1.svg" alt="quote1">
             <p class="sentences" id="sen"></p>
             <img class="quote2" src="svg/quote-2.svg" alt="quote2">
+        </div>
+            <!--<input class="give_up" id="button2" type="button" onclick="give_up()" value="Poddaję się"> -->
+            <button class="give_up" id="button2" type="button" onclick="give_up()">
+                    <img class="give_up_img"src="svg/give_up_button.svg" height="50" alt="give up">
+                    <span class="give_up_text"><strong>Nie wiem</strong></span>
+            </button>
+        
         </div>
        
         <form class="user-form" id="frm">
@@ -29,8 +37,9 @@
             <img src="svg/check_button.svg" height="50" alt="submit"> </button>
             </form>
         </div>
-            <input id="button2" type="button" onclick="give_up()" value="Poddaję się">
-            <input id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
+
+            <input class= "next" id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
+
         <script >
             load_cache();
             set_sentences();

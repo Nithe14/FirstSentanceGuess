@@ -51,9 +51,9 @@ function httpGet(url){
 
 function set_sentences() {
     let sentences = [
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${1}`).replace(/['"]+/g, ''),
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${2}`).replace(/['"]+/g, ''),
-        httpGet(`http://127.0.0.1:8000/sentence?id=${questionId}&s=Sentence${3}`).replace(/['"]+/g, '')
+        httpGet(`/sentence?id=${questionId}&s=Sentence${1}`).replace(/['"]+/g, ''),
+        httpGet(`/sentence?id=${questionId}&s=Sentence${2}`).replace(/['"]+/g, ''),
+        httpGet(`/sentence?id=${questionId}&s=Sentence${3}`).replace(/['"]+/g, '')
     ];
     document.getElementById("sen").innerHTML = `
             ${sentences[0]}
@@ -61,7 +61,7 @@ function set_sentences() {
             ${blurTemplate(sentences[2])}`;
 }
 function get_book() {
-    var url = `http://127.0.0.1:8000/title?id=${questionId}`;
+    var url = `/title?id=${questionId}`;
     var res = httpGet(url);
     var json = JSON.parse(res);
 
@@ -112,7 +112,7 @@ function give_up(){
 }
 
 function get_max_id(){
-    var url = "http://127.0.0.1:8000/books-counter";
+    var url = "/books-counter";
     var maxId = parseInt(httpGet(url));
 
     return maxId;
