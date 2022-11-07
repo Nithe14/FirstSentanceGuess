@@ -22,8 +22,8 @@
         </div>
             <!--<input class="give_up" id="button2" type="button" onclick="give_up()" value="Poddaję się"> -->
             <button class="give_up" id="button2" type="button" onclick="give_up()">
-                    <img class="give_up_img"src="svg/give_up_button.svg" height="50" alt="give up">
-                    <span class="give_up_text"><strong>Nie wiem</strong></span>
+                    <img class="button_image"src="svg/give_up_button.svg" height="50" alt="give up">
+                    <span class="button_text g_button_text"><strong>Nie wiem</strong></span>
             </button>
         
         </div>
@@ -34,11 +34,16 @@
             
             <!--check_book button-->
             <button class="check_book" id="button1" type="button" onclick="check_book()"> 
-            <img src="svg/check_button.svg" height="50" alt="submit"> </button>
+                <img class="button_image" src="svg/check_button.svg" height="50" alt="submit"> 
+                <span class="button_text"><strong>Sprawdź</strong></span>
+            </button>
+
+            <button class= "next" id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
+                <img class="button_image" src="svg/next-button.svg" height="50" alt="next"/>
+                <span class="button_text d_button_text"><strong>Dalej</strong></span>
+            </button>
             </form>
         </div>
-
-            <input class= "next" id="nextBookButton" type="button" onclick="next_book_test()" value="NextTest">
 
         <script >
             load_cache();

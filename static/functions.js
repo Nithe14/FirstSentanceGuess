@@ -102,6 +102,7 @@ function give_up(){
 
     var guessButton = document.getElementById("button1");
     guessButton.disabled = true;
+    guessButton.style.visibility = 'hidden';
     document.getElementById("nextBookButton").style.visibility = 'visible';
     var giveUpButton = document.getElementById("button2");
     giveUpButton.hidden = true;
@@ -126,6 +127,7 @@ function reset_form() {
     document.getElementById("frm").reset();
     document.getElementById("button2").hidden = false;
     document.getElementById("button1").disabled = false;
+    document.getElementById("button1").style.visibility = 'visible';
     document.getElementById("field").readOnly = false;
     document.getElementById("nextBookButton").style.visibility = 'hidden';
 

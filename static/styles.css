@@ -55,20 +55,6 @@ body {
     /*margin-bottom: auto;*/
 }
 
-
-.give_up_img {
-    vertical-align: middle;
-}
-.give_up_text{
-    line-height: 24px;
-    margin-left: -155.6px;
-    /*right: 65%;*/
-    /*transform: translateX(-50%);*/
-    font-size: 15px;
-    color: white;
-
-}
-
 .give_up:hover{
     margin-left: -20px;
     transition: margin-left 700ms;
@@ -218,6 +204,41 @@ blur:hover {
 
 .next {
     visibility: hidden;
+    grid-area: check;
+    border: none;
+    background: transparent; 
+    justify-self: start;
+    align-self: center;
+    margin-top: 3px;
+    margin-left: -90px;
+    transition: margin-left 700ms;
+}
+
+.next:hover {
+    margin-left: -20px;
+    transition: margin-left 700ms;
+    cursor: pointer;
+}
+
+.button_image {
+    vertical-align: middle;
+}
+
+.button_text {
+    line-height: 14px;
+    margin-left: -150px;
+    /*right: 65%;*/
+    /*transform: translateX(-50%);*/
+    font-size: 15px;
+    color: white;
+}
+
+.d_button_text {
+    margin-left: -130px;
+}
+
+.g_button_text {
+    margin-left: -155.6px;
 }
 
 /* From uiverse.io */
