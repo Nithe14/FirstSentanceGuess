@@ -1,4 +1,5 @@
 let questionId = 1;
+let points = 0; 
 
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
@@ -84,7 +85,8 @@ function check_book(){
         input.readOnly = true;
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
-
+        points++;
+        console.log(points);
         document.getElementById("nextBookButton").style.visibility = 'visible';
     }
 
