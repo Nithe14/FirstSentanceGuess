@@ -1,6 +1,7 @@
 let questionId = 1;
 let points = 0; 
 let addpoints = 5;
+let maxpoints = 50;
 
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
@@ -106,6 +107,7 @@ function check_book(){
 
 function show_points()
 {
+    document.getElementById('complete-bar').style.strokeDashoffset = (600) - ((600) * (36 * points/maxpoints)) / 100;
     document.getElementById("points").textContent = points;
 }
 
