@@ -15,6 +15,7 @@ struct Book {
     title: String,
     title_en: String,
     author: String,
+    ganre: String,
     sentences: [String; 3],
 }
 #[get("/books-counter")]
@@ -54,6 +55,7 @@ fn get_title(id: String) -> Json<Book> {
         title: book.find_path(&["Title"]).unwrap().to_string(),
         title_en: book.find_path(&["TitleEN"]).unwrap().to_string(),
         author: book.find_path(&["Author"]).unwrap().to_string(),
+        ganre: book.find_path(&["Ganre"]).unwrap().to_string(),
         sentences: [
             book.find_path(&["Sentence1"]).unwrap().to_string(),
             book.find_path(&["Sentence2"]).unwrap().to_string(),
