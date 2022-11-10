@@ -1,5 +1,5 @@
 let questionId = 1;
-let points = 0; 
+let points = 0;
 let addpoints = 5;
 let maxpoints = 50;
 let oldpoints = 0;
@@ -81,12 +81,17 @@ function check_book(){
     var guessButton = document.getElementById("button1");
     var giveUpButton = document.getElementById("button2");
     var input = document.getElementById("field");
+    var help1 = document.getElementById("help1_button");
+    var help2 = document.getElementById("help2_button");
 
     if (guess.elements[0].value.toUpperCase() === book.title.replace(/['"]+/g, '').toUpperCase()
         || guess.elements[0].value.toUpperCase() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
         giveUpButton.hidden = true;
         guessButton.disabled = true;
         input.readOnly = true;
+        help1.style.visibility = 'hidden';
+        help2.style.visibility = 'hidden';
+
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
         addpoints = (addpoints > 0) ? addpoints : 1;
@@ -122,6 +127,11 @@ function give_up(){
     var book = get_book();
 
     var guessButton = document.getElementById("button1");
+    var help1 = document.getElementById("help1_button");
+    var help2 = document.getElementById("help2_button");
+
+    help1.style.visibility = 'hidden';
+    help2.style.visibility = 'hidden';
     guessButton.disabled = true;
     guessButton.style.visibility = 'hidden';
     document.getElementById("nextBookButton").style.visibility = 'visible';
@@ -151,6 +161,8 @@ function reset_form() {
     document.getElementById("button1").style.visibility = 'visible';
     document.getElementById("field").readOnly = false;
     document.getElementById("nextBookButton").style.visibility = 'hidden';
+    document.getElementById('help1_button').style.visibility = 'visible';
+    document.getElementById('help2_button').style.visibility = 'visible';
 
     var id = questionId ;
             var max_id = get_max_id();
