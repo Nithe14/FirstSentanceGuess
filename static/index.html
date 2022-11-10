@@ -59,9 +59,15 @@
             set_sentences();
             var input = document.getElementById("field");
             input.addEventListener("keypress", function(event) {
+                
                 if (event.key === "Enter") {
                     event.preventDefault();
-                    document.getElementById("button1").click();
+                    if (document.getElementById('nextBookButton').style.visibility === 'visible') {
+                        document.getElementById("nextBookButton").click();
+                    }
+                    else {
+                        document.getElementById("button1").click();
+                    }
                 }
             });
             var id = questionId ;
@@ -69,6 +75,9 @@
             if (id === max_id) {
                 document.getElementById("next").hidden = "true";
                 document.getElementById('nextBookButton').style.visibility = 'hidden';
+                document.getElementById('nextBookButton').disabled = true;
+                let next_button = document.getElementById('nextBookButton');
+                next_button.removeChild(next_button);
             }
             save_cache();
         </script>
