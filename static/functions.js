@@ -39,7 +39,6 @@ function blurTemplate(sentence){
 function unblur(element){
     element.style.filter = "blur(0px)";
     addpoints--;
-    console.log(addpoints);
 }
 
 function blurOnClick(element){
@@ -90,6 +89,7 @@ function check_book(){
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
         addpoints = (addpoints > 0) ? addpoints : 1;
         points+=addpoints;
+        addpoints = 5;
         show_points();
         document.getElementById("nextBookButton").style.visibility = 'visible';
     }
@@ -101,7 +101,6 @@ function check_book(){
             guess.classList.remove("apply-shake");
         });
         addpoints-=2;
-        console.log(addpoints);
     }
 }
 
