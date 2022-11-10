@@ -35,11 +35,12 @@ body {
     grid-area: sen;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
     grid-template-areas:
         ". box box giveup"
         ". box box ."
-        ". box box nextb"
+        ". box box help1"
+        ". box box help2"
         ". box box ."
 }
 
@@ -58,6 +59,50 @@ body {
 
 .give_up:hover {
     margin-left: -20px;
+    transition: margin-left 700ms;
+    cursor: pointer;
+}
+
+.help1 {
+    border: 0;
+    background: transparent;
+    grid-area: help1;
+    justify-self: start;
+    align-self: center;
+    margin-top: 3px;
+    margin-left: -155.11px;
+    transition: margin-left 700ms;
+    z-index: 0;
+}
+
+.help1:hover {
+    margin-left: -85.11px;
+    transition: margin-left 700ms;
+    cursor: pointer;
+}
+
+#help1 {
+    margin-left: -151.5px;
+}
+
+#help2 {
+    margin-left: -131.5px;
+}
+
+.help2 {
+    border: 0;
+    background: transparent;
+    grid-area: help2 ;
+    justify-self: start;
+    align-self: center;
+    margin-top: 3px;
+    margin-left: -155.11px;
+    transition: margin-left 700ms;
+    z-index: 0;
+}
+
+.help2:hover {
+    margin-left: -85.11px;
     transition: margin-left 700ms;
     cursor: pointer;
 }
