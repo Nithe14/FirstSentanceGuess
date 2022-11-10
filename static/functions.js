@@ -1,5 +1,6 @@
 let questionId = 1;
 let points = 0; 
+let addpoints = 5;
 
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
@@ -37,6 +38,8 @@ function blurTemplate(sentence){
 
 function unblur(element){
     element.style.filter = "blur(0px)";
+    addpoints--;
+    console.log(addpoints);
 }
 
 function blurOnClick(element){
@@ -85,8 +88,9 @@ function check_book(){
         input.readOnly = true;
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
-        points++;
-        console.log(points);
+        addpoints = (addpoints > 0) ? addpoints : 1;
+        points+=addpoints;
+        show_points();
         document.getElementById("nextBookButton").style.visibility = 'visible';
     }
 
@@ -96,7 +100,14 @@ function check_book(){
         guess.addEventListener("animationend", (e) => {
             guess.classList.remove("apply-shake");
         });
+        addpoints-=2;
+        console.log(addpoints);
     }
+}
+
+function show_points()
+{
+    document.getElementById("points").textContent = points;
 }
 
 function give_up(){
