@@ -113,8 +113,7 @@ function show_points()
         { strokeDashoffset: (600) - ((600) * (36 * oldpoints/maxpoints)) / 100 },
         { strokeDashoffset: (600) - ((600) * (36 * points/maxpoints)) / 100 }
       ];
-    document.getElementById('complete-bar').animate(progressBarAnimation, {duration: 750});
-    //document.getElementById('complete-bar').style.strokeDashoffset = (600) - ((600) * (36 * points/maxpoints)) / 100;
+    document.getElementById('complete-bar').animate(progressBarAnimation, {duration: 250});
     document.getElementById('complete-bar').style.strokeDashoffset = (600) - ((600) * (36 * points/maxpoints)) / 100;
     document.getElementById("points").textContent = points;
 }
