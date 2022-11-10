@@ -2,6 +2,7 @@ let questionId = 1;
 let points = 0; 
 let addpoints = 5;
 let maxpoints = 50;
+let oldpoints = 0;
 
 function save_cache(){
     sessionStorage.setItem("questionId", questionId);
@@ -89,6 +90,7 @@ function check_book(){
         document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>"  +
             "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
         addpoints = (addpoints > 0) ? addpoints : 1;
+        oldpoints = points;
         points+=addpoints;
         addpoints = 5;
         show_points();
@@ -107,6 +109,12 @@ function check_book(){
 
 function show_points()
 {
+    let progressBarAnimation = [
+        { strokeDashoffset: (600) - ((600) * (36 * oldpoints/maxpoints)) / 100 },
+        { strokeDashoffset: (600) - ((600) * (36 * points/maxpoints)) / 100 }
+      ];
+    document.getElementById('complete-bar').animate(progressBarAnimation, {duration: 750});
+    //document.getElementById('complete-bar').style.strokeDashoffset = (600) - ((600) * (36 * points/maxpoints)) / 100;
     document.getElementById('complete-bar').style.strokeDashoffset = (600) - ((600) * (36 * points/maxpoints)) / 100;
     document.getElementById("points").textContent = points;
 }
@@ -174,3 +182,8 @@ function next_book(){
     }
 
 }
+
+  const animationTiming = {
+    duration: 350,
+    iterations: 1,
+  }
