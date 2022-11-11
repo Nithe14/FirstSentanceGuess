@@ -80,13 +80,7 @@
             });
             var id = questionId ;
             var max_id = get_max_id(); 
-            if (id === max_id) {
-                document.getElementById("next").hidden = "true";
-                document.getElementById('nextBookButton').style.visibility = 'hidden';
-                document.getElementById('nextBookButton').disabled = true;
-                let next_button = document.getElementById('nextBookButton');
-                next_button.removeChild(next_button);
-            }
+            
             save_cache();
         </script>
     </body>

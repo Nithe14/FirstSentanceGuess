@@ -117,7 +117,7 @@ function check_book() {
         addpoints = (addpoints > 0) ? addpoints : 1;
         oldpoints = points;
         points += addpoints;
-        points_per_question[addpoints];
+        points_per_question[questionId-1] = addpoints;
         addpoints = 5;
         show_points();
         document.getElementById("nextBookButton").style.visibility = 'visible';
@@ -240,13 +240,19 @@ function get_help2() {
 function next_book_test() {
     let maxId = get_max_id();
     let nextId = questionId + 1;
-    if (nextId >= maxId) {
-        document.getElementById("nextBookButton").hidden = true;
+    //if (nextId >= maxId) {
+        ////document.getElementById("nextBookButton").hidden = true;
+        //document.getElementById("nextBookButton").onclick = show_result_screen();
+    //}
+    if (questionId === maxId){
+        show_result_screen();
     }
-    reset_form();
-    questionId++;
-    set_sentences();
-    save_cache();
+    else {
+        reset_form();
+        questionId++;
+        set_sentences();
+        save_cache();
+    }
 }
 
 function next_book() {
@@ -262,19 +268,30 @@ function next_book() {
 function show_result_screen()
 {
     var screen = document.getElementById("sen");
-    screen.innerText = "";
+    screen.innerHTML = "<p style='text-align: center'> Końcowy wynik: </p>";
+    //screen.innerText = "";
 
-    for (let i = 1; i <= 10; i++) 
+    for (let i = 1; i <= 10; i++)
     {
         let book = get_book_by_id(i);
-        screen.innerText += book.title.replaceAll('"', '');
-        
-        if (points_per_question[i-1] > 0) screen.innerText += " ✓";
-        else screen.innerText += " ✗";
-        screen.innerText += " " + points_per_question[i-1];
+        //screen.innerText += book.title.replaceAll('"', '');
+        screen.style.fontSize = "26px";
+        //screen.style.lineHeight = "50px";
 
-        screen.innerText += "\n";
+        if (points_per_question[i-1] > 0) {
+            screen.innerHTML += "<p style='color:green'> ✓ " + book.author.replaceAll('"', '') + " " + book.title + " " + points_per_question[i-1] + "/5 pkt</p>";
+        }
+        else {
+            screen.innerHTML += "<p style='color:red'> ✗ " + book.author.replaceAll('"', '') + " " + book.title + " " + points_per_question[i-1] + "/5 pkt</p>";
+        }
+        //screen.innerHTML += " " + book.author.replaceAll('"', '') + " " + book.title;
+        //screen.innerHTML += " " + points_per_question[i-1]+"/5 </p>";
+
+        //screen.innerText += "\n";
     }
+    document.getElementById("nextBookButton").hidden = true;
+    document.getElementById("button1").hidden = true;
+    document.getElementById("field").hidden = true;
 }
 
 const animationTiming = {

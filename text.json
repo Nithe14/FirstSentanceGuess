@@ -1,47 +1,94 @@
 {
   "1": {
-    "Title": "Pierwsza książka",
-    "TitleEN": "First book",
-    "Author": "J. R. R. Tolkien",
+    "Title": "Pieśń o Achillesie",
+    "TitleEN": "The Song of Achilles",
+    "Author": "M. Madelin",
     "Ganre": "Lit. Piękna",
-    "Sentence1": "Jebać disa.",
-    "Sentence2": "Cisa tetrisa, anubisa, długopisa.",
-    "Sentence3": "JD :)"
+    "Sentence1": "Mój ojciec był królem i synem królów. ",
+    "Sentence2": "Był niski, jak większość z nas i barczysty jak wół. ",
+    "Sentence3": "Poślubił moją matkę, kiedy miała czternaście lat i wedle zapewnienia kapłanki była dojrzała."
   },
   "2": {
-    "Title": "Druga książka",
-    "TitleEN": "Second book",
-    "Author": "B. Sanderson",
-    "Ganre": "Kryminał",
-    "Sentence1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Sentence2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "Sentence3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Title": "Gildia Magów",
+    "TitleEN": "The Magicians' Guild",
+    "Author": "T. Canavan",
+    "Ganre": "Fantastyka",
+    "Sentence1": "Mawiają w <i>X</i>, że wiatr ma duszę i jęczy w ciasnych zaułkach miasta, ponieważ smuci go ich widok. ",
+    "Sentence2": "W dniu <i>X</i> wiatr przemykał ze świstem wśród masztów kołyszących w <i>X</i>, wpadł przez bramę <i>X</i> i zawył między domami. ",
+    "Sentence3": "A następnie, jakby przeraziwszy się zamieszkujących je udręczonych dusz, przeszedł w cichy skowyt."
   },
   "3": {
-    "Title": "Trzecia książka",
-    "TitleEN": "Third book",
-    "Author": "S. King",
-    "Ganre": "Piękna",
-    "Sentence1": "...",
-    "Sentence2": ",,,",
-    "Sentence3": "///"
+    "Title": "Harry Potter i Książę Półkrwi",
+    "TitleEN": "Harry Potter and the Half-Blood Prince",
+    "Author": "J.K. Rowling",
+    "Ganre": "Młodzieżowa",
+    "Sentence1": "Zbliżała się północ, a Premier siedział sam w swoim biurze, czytając długą notę, która przelatywała przez jego mózg, nie pozostawiając po sobie najmniejszego śladu zrozumienia. " ,
+    "Sentence2": "Czekał na telefon od prezydenta dalekiego kraju i poza zastanawianiem się, kiedy ten nieszczęsny człowiek zadzwoni i próbami zagłuszenia nieprzyjemnych wspomnień z całego bardzo długiego, męczącego i ciężkiego tygodnia, w jego głowie nie było już miejsca na nic więcej. ",
+    "Sentence3": "Im bardziej próbował się skupić na tekście widniejącym na stronie, tym wyraźniej widział triumfującą twarz jednego ze swoich politycznych przeciwników. "
   },
   "4": {
-    "Title": "Test4",
-    "TitleEN": "Test4",
-    "Author": "4-author",
-    "Ganre": "Reportaż",
-    "Sentence1": "Sentence41",
-    "Sentence2": "Sentence42",
-    "Sentence3": "Sentence43"
+    "Title": "Szklany Klosz",
+    "TitleEN": "The Bell Jar",
+    "Author": "S. Plath",
+    "Ganre": "Lit. Piękna",
+    "Sentence1": "Upalne to było lato, dziwne lato, w którym stracono <i>X</i>, a ja siedziałam w Nowym Jorku i nie bardzo wiedziałam po co i dlaczego.",
+    "Sentence2": "Głupio mi się robi na myśl o karze śmierci.",
+    "Sentence3": "Sama wzmianka o tym, że można uśmiercić człowieka za pomocą prądu, przyprawia mnie o mdłości, a w gazetach o niczym innym nie pisali - wielkie nagłówki wybałuszały na mnie oczy z każdego rogu ulicy, ze zjazdów do kolejki podziemnej ziejącej zapachem palonych fistaszków i gazu ziemnego."
   },
   "5": {
-    "Title": "Cień Wiatru",
-    "TitleEN": "The Shadow of the Wind",
-    "Author": "Carlos Ruiz Zafón",
-    "Ganre": "Sci-Fi",
-    "Sentence1": "Wciąż pamiętam ów świat, gdy ojciec po raz pierwszy wziął mnie ze sobą w miejsce zwane X X X. ",
-    "Sentence2": "Szliśmy ulicami Barcelony. ",
-    "Sentence3": "Były pierwsze dni lata 1945 roku. "
-  }
+    "Title": "Duma i Uprzedzenie",
+    "TitleEN": "Pride and Prejudice",
+    "Author": "J. Austen",
+    "Ganre": "Lit. Piękna",
+    "Sentence1": "Jest prawdą, powszechnie uznawaną, że wolny mężczyzna, posiadający sporą fortunę, z pewnością koniecznie musi potrzbować żony. ",
+    "Sentence2": "Chociaż mało są znane odczucia czy zaptrywanie takiego pana, to i tak przy pierwszym jego pojawieniu się w sąsiedztwie, prawda ta tak mocno przenika umysły okolicznych rodzin, że jest on uważany za prawowitą własność tej czy tamtej spośród córek. ",
+    "Sentence3": "<br></br> - Mój drogi panie <i>X</i>. "
+  },
+  
+      "6": {
+          "Title": "Dom nad błękitnym morzem",
+          "TitleEN": ",The House in the Cerulean Sea",
+          "Author": "TJ Klune",
+          "Ganre": "Fantastyka",
+          "Sentence1": "- O rety - mruknął <i>X</i> <i>X</i>, ocierając pot z czoła. ",
+          "Sentence2": "- To doprawdy niezwykłe. ",
+          "Sentence3": "Co za niedopowiedzenie. "
+      },
+      "7": {
+          "Title": "Uśpione morderstwo",
+          "TitleEN": "Sleeping Murder",
+          "Author": "A. Christie",
+          "Ganre": "Kryminał",
+          "Sentence1": "<i>X</i> <i>X</i> stała na molo, lekko drżąc. ",
+          "Sentence2": "<br></br>Doki, baraki urzędu celnego i widoczna z tego miejsca część Anglii łagodnie kołysały się jej przed oczami, unosząc i opadając. ",
+          "Sentence3": "<br></br> I właśnie w tym momencie pojęła decyzję, której konsekwencją stały się niezykłe wydarzenia."
+      },
+      "8": {
+        "Title": "Baśniobór",
+        "TitleEN": "Fablehaven",
+        "Author": "B. Mull",
+        "Ganre": "Młodzieżowa",
+        "Sentence1": "<i>X</i> wyglądała przez boczną szybę suv-a i patrzyła, jak za oknem śmigają drzewa. ",
+        "Sentence2": "Gdy nieustanny ruch zaczynał ją męczyć, patrzyła w przód i przyglądała się konretnemu drzwu, wiodła za nim wzrokiem, gdy powoli się zbliżało, mijało auto i stopniowo znikało w tyle. ",
+        "Sentence3": "<br></br> Czy takie właśnie jest życie?"
+      },
+      "9": {
+        "Title": "Niespokojni Ludzie",
+        "TitleEN": "Anxious People",
+        "Author": "F. Backman",
+        "Ganre": "Lit. Piękna",
+        "Sentence1": "Napad na bank. ",
+        "Sentence2": "Dramat zakładników. ",
+        "Sentence3": "Strzał z pistoletu."
+      },
+      "10": {
+        "Title": "Diuna",
+        "TitleEN": "Kroniki Diuny",
+        "Author": "F. Herbert",
+        "Ganre": "Sci-Fi",
+        "Sentence1": "Początek to czas dla podjęcia najsubtelniejszych działań, by wszystko znajdowało się na swoim miejscu. ",
+        "Sentence2": "Wie o tym każda siostra <i>X X</i>.",
+        "Sentence3": "Rozpoczynając studia nad życiem <i> X </i>, postaraj się więc najpierw osadzić go w czasie: urodził się w 57 roku <i> X X X X</i>."
+      }
+
 }

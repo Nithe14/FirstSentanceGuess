@@ -24,7 +24,7 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 0.09fr 1fr 0.2fr;
     grid-template-areas:
         "circle circle circle circle"
         "sen sen sen sen"
