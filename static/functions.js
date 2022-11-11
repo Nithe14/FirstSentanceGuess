@@ -5,7 +5,7 @@ let maxpoints = 50;
 let oldpoints = 0;
 let helped1 = 0;
 let helped2 = 0;
-
+let points_per_question = new Array(10).fill(0);
 
 function getTextWidth(text, font) {
   let canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
@@ -87,6 +87,14 @@ function get_book() {
     return json;
 }
 
+function get_book_by_id(id) {
+    var url = `/title?id=${id}`;
+    var res = httpGet(url);
+    var json = JSON.parse(res);
+
+    return json;
+}
+
 function check_book() {
     var book = get_book();
     var guess = document.getElementById('frm');
@@ -96,8 +104,8 @@ function check_book() {
     var help1 = document.getElementById("help1_button");
     var help2 = document.getElementById("help2_button");
 
-    if (guess.elements[0].value.toUpperCase() === book.title.replace(/['"]+/g, '').toUpperCase() ||
-        guess.elements[0].value.toUpperCase() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
+    if (guess.elements[0].value.toUpperCase().trim() === book.title.replace(/['"]+/g, '').toUpperCase() ||
+        guess.elements[0].value.toUpperCase().trim() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
         giveUpButton.hidden = true;
         guessButton.disabled = true;
         input.readOnly = true;
@@ -109,6 +117,7 @@ function check_book() {
         addpoints = (addpoints > 0) ? addpoints : 1;
         oldpoints = points;
         points += addpoints;
+        points_per_question[addpoints];
         addpoints = 5;
         show_points();
         document.getElementById("nextBookButton").style.visibility = 'visible';
@@ -248,6 +257,24 @@ function next_book() {
         location.href = `/?id=${newId}`;
     }
 
+}
+
+function show_result_screen()
+{
+    var screen = document.getElementById("sen");
+    screen.innerText = "";
+
+    for (let i = 1; i <= 10; i++) 
+    {
+        let book = get_book_by_id(i);
+        screen.innerText += book.title.replaceAll('"', '');
+        
+        if (points_per_question[i-1] > 0) screen.innerText += " ✓";
+        else screen.innerText += " ✗";
+        screen.innerText += " " + points_per_question[i-1];
+
+        screen.innerText += "\n";
+    }
 }
 
 const animationTiming = {
