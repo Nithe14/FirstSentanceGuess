@@ -1,21 +1,21 @@
 {
   "1": {
-    "Title": "Pierwsza książka",
-    "TitleEN": "First book",
-    "Author": "J. R. R. Tolkien",
-    "Ganre": "Lit. Piękna",
-    "Sentence1": "Jebać disa.",
-    "Sentence2": "Cisa tetrisa, anubisa, długopisa.",
-    "Sentence3": "JD :)"
+    "Title": "Lorem ipsum",
+    "TitleEN": "Lorem ipsum",
+    "Author": "Lorem ipsum",
+    "Ganre": "Lorem ipsum",
+    "Sentence1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "Sentence2": "Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis. ",
+    "Sentence3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   "2": {
     "Title": "Druga książka",
     "TitleEN": "Second book",
     "Author": "B. Sanderson",
     "Ganre": "Kryminał",
-    "Sentence1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Sentence2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "Sentence3": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Sentence1": "Lorem ipsum. ",
+    "Sentence2": "Ut enim ad minim veniam. ",
+    "Sentence3": "Duis aute irure dolor in reprehenderit."
   },
   "3": {
     "Title": "Trzecia książka",

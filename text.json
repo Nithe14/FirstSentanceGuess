@@ -42,7 +42,7 @@
     "Ganre": "Lit. Piękna",
     "Sentence1": "Jest prawdą, powszechnie uznawaną, że wolny mężczyzna, posiadający sporą fortunę, z pewnością koniecznie musi potrzbować żony. ",
     "Sentence2": "Chociaż mało są znane odczucia czy zaptrywanie takiego pana, to i tak przy pierwszym jego pojawieniu się w sąsiedztwie, prawda ta tak mocno przenika umysły okolicznych rodzin, że jest on uważany za prawowitą własność tej czy tamtej spośród córek. ",
-    "Sentence3": "<br></br> - Mój drogi panie <i>X</i>. "
+    "Sentence3": "<br/>- Mój drogi panie <i>X</i>. "
   },
   
       "6": {
@@ -52,7 +52,7 @@
           "Ganre": "Fantastyka",
           "Sentence1": "- O rety - mruknął <i>X</i> <i>X</i>, ocierając pot z czoła. ",
           "Sentence2": "- To doprawdy niezwykłe. ",
-          "Sentence3": "Co za niedopowiedzenie. "
+          "Sentence3": "<br/>Co za niedopowiedzenie. "
       },
       "7": {
           "Title": "Uśpione morderstwo",
@@ -60,8 +60,8 @@
           "Author": "A. Christie",
           "Ganre": "Kryminał",
           "Sentence1": "<i>X</i> <i>X</i> stała na molo, lekko drżąc. ",
-          "Sentence2": "<br></br>Doki, baraki urzędu celnego i widoczna z tego miejsca część Anglii łagodnie kołysały się jej przed oczami, unosząc i opadając. ",
-          "Sentence3": "<br></br> I właśnie w tym momencie pojęła decyzję, której konsekwencją stały się niezykłe wydarzenia."
+          "Sentence2": "<br/>Doki, baraki urzędu celnego i widoczna z tego miejsca część Anglii łagodnie kołysały się jej przed oczami, unosząc i opadając. ",
+          "Sentence3": "<br/> I właśnie w tym momencie pojęła decyzję, której konsekwencją stały się niezykłe wydarzenia."
       },
       "8": {
         "Title": "Baśniobór",
@@ -69,8 +69,8 @@
         "Author": "B. Mull",
         "Ganre": "Młodzieżowa",
         "Sentence1": "<i>X</i> wyglądała przez boczną szybę suv-a i patrzyła, jak za oknem śmigają drzewa. ",
-        "Sentence2": "Gdy nieustanny ruch zaczynał ją męczyć, patrzyła w przód i przyglądała się konretnemu drzwu, wiodła za nim wzrokiem, gdy powoli się zbliżało, mijało auto i stopniowo znikało w tyle. ",
-        "Sentence3": "<br></br> Czy takie właśnie jest życie?"
+        "Sentence2": "Gdy nieustanny ruch zaczynał ją męczyć, patrzyła w przód i przyglądała się konretnemu drzewu, wiodła za nim wzrokiem, gdy powoli się zbliżało, mijało auto i stopniowo znikało w tyle. ",
+        "Sentence3": "<br/> Czy takie właśnie jest życie?"
       },
       "9": {
         "Title": "Niespokojni Ludzie",
@@ -88,7 +88,7 @@
         "Ganre": "Sci-Fi",
         "Sentence1": "Początek to czas dla podjęcia najsubtelniejszych działań, by wszystko znajdowało się na swoim miejscu. ",
         "Sentence2": "Wie o tym każda siostra <i>X X</i>.",
-        "Sentence3": "Rozpoczynając studia nad życiem <i> X </i>, postaraj się więc najpierw osadzić go w czasie: urodził się w 57 roku <i> X X X X</i>."
+        "Sentence3": "Rozpoczynając studia nad życiem <i> X</i>, postaraj się więc najpierw osadzić go w czasie: urodził się w 57 roku <i> X X X X</i>."
       }
 
 }
