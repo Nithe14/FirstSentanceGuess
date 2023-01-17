@@ -133,6 +133,7 @@ body {
     grid-area: st;
     font-size: 32px;
     margin-top: 50px;
+    /*white-space: nowrap;*/
 }
 
 blur {
