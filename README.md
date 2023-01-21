@@ -8,6 +8,8 @@ A super simple web app based on BookTube (Youtube but only books) First Sentance
 
 - cargo 1.63.0
 
+- or you can use docker
+
 #### Dependencies
 
 - serde 1.0.140
@@ -47,6 +49,8 @@ Update books database by editing `text.json`. For now `id` must be an iterator (
 } //..until the last one
 ```
 
+##### Run with cargo
+
 Run this command to start the app:
 
 ```bash
@@ -54,3 +58,14 @@ cargo run
 ```
 
 Go to your browser at: `127.0.0.1:8000`  and start play the game!
+
+##### Run with docker
+
+You have to build the image from `Dockerfile` for now. I'm going to make docker compose version in the future. Run this commands in your terminal:
+
+```bash
+docker build . -t <your-tag>
+docker run -p 8000:8000 <your-tag>
+```
+
+Go to your browser at: `127.0.0.1:8000` and start play the game!
