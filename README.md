@@ -72,4 +72,4 @@ Go to your browser at: `127.0.0.1:8000` and start play the game!
 
 ### Demo
 
-You can play demo at https://firstsentenceg-prod-dnote-n8ubwl.mo6.mogenius.io/. Only in Polish at this moment. Enjoy!
+You can play [demo here]([https://firstsentenceg-prod-dnote-n8ubwl.mo6.mogenius.io/](https://firstsentenceg-prod-dnote-n8ubwl.mo6.mogenius.io/).). Only in Polish at this moment. Enjoy!
