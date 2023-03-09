@@ -131,6 +131,9 @@ function check_book() {
     }
 }
 
+
+
+
 function show_points() {
     let progressBarAnimation = [{
             strokeDashoffset: (600) - ((600) * (36 * oldpoints / maxpoints)) / 100
