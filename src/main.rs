@@ -14,58 +14,48 @@ use forms::{HelpInput, InputForm};
 #[macro_use]
 extern crate rocket;
 
-#[get("/books-counter")]
-fn get_books_count() -> String {
+fn opendb() -> rustcJson {
     let mut file = File::open("text.json").unwrap();
     let mut data = String::new();
 
     file.read_to_string(&mut data).unwrap();
 
     let json = rustcJson::from_str(&data).unwrap();
+    json
+}
 
-    json.as_object().unwrap().len().to_string()
+#[get("/books-counter")]
+fn get_books_count() -> String {
+    let db = opendb();
+    db.as_object().unwrap().len().to_string()
 }
 
 #[post("/books-ids")]
 fn get_books_ids() -> Json<BooksIdsResponse> {
-    let mut file = File::open("text.json").unwrap();
-    let mut data = String::new();
-
-    file.read_to_string(&mut data).unwrap();
-
-    let json = rustcJson::from_str(&data).unwrap();
-
+    let db = opendb();
     let mut db_ids = Vec::new();
 
-    for key in json.as_object().unwrap().keys() {
+    for key in db.as_object().unwrap().keys() {
         db_ids.push(key.to_string());
     }
 
     Json(BooksIdsResponse {
-        n: json.as_object().unwrap().len(),
+        n: db.as_object().unwrap().len(),
         ids: db_ids,
     })
 }
 
 #[get("/sentence?<id>&<s>")]
 fn get_sentence(id: String, s: String) -> std::string::String {
-    let mut file = File::open("text.json").unwrap();
-    let mut data = String::new();
-    file.read_to_string(&mut data).unwrap();
+    let db = opendb();
 
-    let json = rustcJson::from_str(&data).unwrap();
-
-    let book = json.find_path(&[id.as_str()]).unwrap();
+    let book = db.find_path(&[id.as_str()]).unwrap();
     book.find_path(&[s.as_str()]).unwrap().to_string()
 }
 
 #[get("/title?<id>")]
 fn get_title(id: String) -> Json<Book> {
-    let mut file = File::open("text.json").unwrap();
-    let mut data = String::new();
-    file.read_to_string(&mut data).unwrap();
-
-    let json = rustcJson::from_str(&data).unwrap();
+    let json = opendb();
     let book = json.find_path(&[id.as_str()]).unwrap();
 
     Json(Book {
@@ -83,11 +73,7 @@ fn get_title(id: String) -> Json<Book> {
 
 #[post("/check-book", format = "json", data = "<input_data>")]
 fn check_book_by_id(input_data: Json<InputForm>) -> Json<ValidationResponse> {
-    let mut file = File::open("text.json").unwrap();
-    let mut data = String::new();
-    file.read_to_string(&mut data).unwrap();
-
-    let json = rustcJson::from_str(&data).unwrap();
+    let json = opendb();
     let book = json.find_path(&[input_data.id.as_str()]).unwrap();
 
     let valid_title = book
@@ -124,11 +110,7 @@ fn check_book_by_id(input_data: Json<InputForm>) -> Json<ValidationResponse> {
 
 #[post("/get-help", format = "json", data = "<input_data>")]
 fn get_help(input_data: Json<HelpInput>) -> Option<String> {
-    let mut file = File::open("text.json").unwrap();
-    let mut data = String::new();
-    file.read_to_string(&mut data).unwrap();
-
-    let json = rustcJson::from_str(&data).unwrap();
+    let json = opendb();
     let book = json.find_path(&[input_data.id.as_str()]).unwrap();
 
     if input_data.help_id == 1 {
