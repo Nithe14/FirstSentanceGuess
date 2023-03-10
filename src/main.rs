@@ -9,7 +9,7 @@ use book::Book;
 mod responses;
 use responses::ValidationResponse;
 mod forms;
-use forms::InputForm;
+use forms::{HelpInput, InputForm};
 
 #[macro_use]
 extern crate rocket;
@@ -101,13 +101,37 @@ fn check_book_by_id(input_data: Json<InputForm>) -> Json<ValidationResponse> {
     }
 }
 
+#[post("/get-help", format = "json", data = "<input_data>")]
+fn get_help(input_data: Json<HelpInput>) -> Option<String> {
+    let mut file = File::open("text.json").unwrap();
+    let mut data = String::new();
+    file.read_to_string(&mut data).unwrap();
+
+    let json = rustcJson::from_str(&data).unwrap();
+    let book = json.find_path(&[input_data.id.as_str()]).unwrap();
+
+    if input_data.help_id == 1 {
+        Some(book.find_path(&["Ganre"]).unwrap().to_string())
+    } else if input_data.help_id == 2 {
+        Some(book.find_path(&["Author"]).unwrap().to_string())
+    } else {
+        None
+    }
+}
+
 #[launch]
 fn rocket() -> _ {
     let rocket = rocket::build();
     rocket
         .mount(
             "/",
-            routes![get_sentence, get_title, get_books_count, check_book_by_id],
+            routes![
+                get_sentence,
+                get_title,
+                get_books_count,
+                check_book_by_id,
+                get_help
+            ],
         )
         .mount("/", FileServer::from(relative!("static")))
 }
