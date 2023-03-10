@@ -7,7 +7,7 @@ use std::io::Read;
 mod book;
 use book::Book;
 mod responses;
-use responses::ValidationResponse;
+use responses::{BooksIdsResponse, ValidationResponse};
 mod forms;
 use forms::{HelpInput, InputForm};
 
@@ -24,6 +24,27 @@ fn get_books_count() -> String {
     let json = rustcJson::from_str(&data).unwrap();
 
     json.as_object().unwrap().len().to_string()
+}
+
+#[post("/books-ids")]
+fn get_books_ids() -> Json<BooksIdsResponse> {
+    let mut file = File::open("text.json").unwrap();
+    let mut data = String::new();
+
+    file.read_to_string(&mut data).unwrap();
+
+    let json = rustcJson::from_str(&data).unwrap();
+
+    let mut db_ids = Vec::new();
+
+    for key in json.as_object().unwrap().keys() {
+        db_ids.push(key.to_string());
+    }
+
+    Json(BooksIdsResponse {
+        n: json.as_object().unwrap().len(),
+        ids: db_ids,
+    })
 }
 
 #[get("/sentence?<id>&<s>")]
@@ -130,7 +151,8 @@ fn rocket() -> _ {
                 get_title,
                 get_books_count,
                 check_book_by_id,
-                get_help
+                get_help,
+                get_books_ids
             ],
         )
         .mount("/", FileServer::from(relative!("static")))

@@ -7,3 +7,9 @@ pub struct ValidationResponse {
     pub title_en: Option<String>,
     pub author: Option<String>,
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct BooksIdsResponse {
+    pub n: usize,
+    pub ids: Vec<String>,
+}
