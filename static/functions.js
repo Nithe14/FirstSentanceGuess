@@ -95,42 +95,68 @@ function get_book_by_id(id) {
     return json;
 }
 
-function check_book() {
-    var book = get_book();
-    var guess = document.getElementById('frm');
-    var guessButton = document.getElementById("button1");
-    var giveUpButton = document.getElementById("button2");
-    var input = document.getElementById("field");
-    var help1 = document.getElementById("help1_button");
-    var help2 = document.getElementById("help2_button");
 
-    if (guess.elements[0].value.toUpperCase().trim() === book.title.replace(/['"]+/g, '').toUpperCase() ||
-        guess.elements[0].value.toUpperCase().trim() === book.title_en.replace(/['"]+/g, '').toUpperCase()) {
-        giveUpButton.hidden = true;
-        guessButton.disabled = true;
-        input.readOnly = true;
-        help1.style.visibility = 'hidden';
-        help2.style.visibility = 'hidden';
+async function post_req(url, data){
+    let options = {
+        method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+    };
 
-        document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>" +
-            "<h3 style='text-align: center'>" + book.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + book.author.replace(/['"]+/g, '') + "</p>";
-        addpoints = (addpoints > 0) ? addpoints : 1;
-        oldpoints = points;
-        points += addpoints;
-        points_per_question[questionId-1] = addpoints;
-        addpoints = 5;
-        show_points();
-        document.getElementById("nextBookButton").style.visibility = 'visible';
-    } else {
-        guess.classList.add("apply-shake");
-        //document.getElementById("title").innerHTML = "<h3>"+guess.elements[0].value + " to błędna odpowiedź. Spróbuj ponownie!</h3> <br>";
-        guess.addEventListener("animationend", (e) => {
-            guess.classList.remove("apply-shake");
-        });
-        addpoints -= 2;
-    }
+    let     res = await fetch(url, options);
+    let  response = await res.json();
+
+    return response;
 }
 
+function check_book() {
+    let url = `/check-book`;
+    let guess = document.getElementById('frm');
+    let in_title = guess.elements[0].value;
+    let data = {
+        id: questionId.toString(),
+        title: in_title
+    };
+    let guessButton = document.getElementById("button1");
+    let giveUpButton = document.getElementById("button2");
+    let input = document.getElementById("field");
+    let help1 = document.getElementById("help1_button");
+    let help2 = document.getElementById("help2_button");
+
+
+    post_req(url, data)
+        .then(res => {
+            if (res.is_correct) {
+                giveUpButton.hidden = true;
+                guessButton.disabled = true;
+                input.readOnly = true;
+                help1.style.visibility = 'hidden';
+                help2.style.visibility = 'hidden';
+
+                document.getElementById("sen").innerHTML = "<p style='text-align: center'> Dobrze! </p>" +
+                    "<h3 style='text-align: center'>" + res.title.replace(/['"]+/g, '') + "</h3><p style='text-align: center'>" + res.author.replace(/['"]+/g, '') + "</p>";
+                addpoints = (addpoints > 0) ? addpoints : 1;
+                oldpoints = points;
+                points += addpoints;
+                points_per_question[questionId-1] = addpoints;
+                addpoints = 5;
+                show_points();
+                document.getElementById("nextBookButton").style.visibility = 'visible';
+
+            } else {
+                guess.classList.add("apply-shake");
+                guess.addEventListener("animationend", (e) => {
+                    guess.classList.remove("apply-shake");
+                });
+                addpoints -= 2;
+
+            }
+        })
+    .catch(error => console.log(error));
+
+}
 
 
 
