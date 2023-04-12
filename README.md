@@ -4,9 +4,9 @@ A super simple web app based on BookTube (Youtube but only books) First Sentance
 
 ## Prerequisities
 
-- rustc 1.63.0
+- rustc 1.68.2
 
-- cargo 1.63.0
+- cargo 1.68.2
 
 - or you can use docker
 
